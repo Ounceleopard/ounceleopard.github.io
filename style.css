@@ -1,3 +1,4 @@
+/* General reset and layout */
 * {
     margin: 0;
     padding: 0;
@@ -9,8 +10,10 @@ body {
     line-height: 1.6;
     background-color: #f4f4f4;
     color: #333;
+    animation: backgroundFade 3s ease-in-out forwards;
 }
 
+/* Header styles */
 header {
     background-color: #333;
     color: #fff;
@@ -20,6 +23,7 @@ header {
 
 header h1 {
     margin-bottom: 10px;
+    animation: fadeIn 2s ease-in-out;
 }
 
 nav ul {
@@ -34,13 +38,17 @@ nav ul li a {
     text-decoration: none;
     font-size: 18px;
     padding: 10px;
+    position: relative;
 }
 
 nav ul li a.active,
 nav ul li a:hover {
     background-color: #555;
+    transition: background-color 0.3s ease;
+    transform: scale(1.1);
 }
 
+/* Section styles */
 section {
     padding: 60px 20px;
     max-width: 1200px;
@@ -51,6 +59,7 @@ section {
 section h2 {
     margin-bottom: 20px;
     font-size: 36px;
+    animation: fadeIn 2s ease-in-out;
 }
 
 .project-gallery {
@@ -61,14 +70,22 @@ section h2 {
 
 .project-item {
     width: 30%;
+    animation: slideUp 2s ease-in-out;
 }
 
 .project-item img {
     width: 100%;
     height: auto;
     border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+.project-item:hover img {
+    transform: scale(1.05);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Footer styles */
 footer {
     text-align: center;
     background-color: #333;
@@ -77,4 +94,40 @@ footer {
     position: relative;
     bottom: 0;
     width: 100%;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes backgroundFade {
+    0% {
+        background-color: #000;
+    }
+    100% {
+        background-color: #f4f4f4;
+    }
+}
+
+/* Classes to trigger specific animations */
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 2s ease-in-out forwards;
 }
