@@ -19,6 +19,13 @@
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
+        <!-- Dark mode toggle button -->
+        <div class="theme-toggle">
+            <label class="switch">
+                <input type="checkbox" id="theme-switcher">
+                <span class="slider round"></span>
+            </label>
+        </div>
     </header>
 
     <main>
@@ -62,6 +69,29 @@
     <footer>
         <p>&copy; 2024 My Minimal Portfolio</p>
     </footer>
+
+    <script>
+        // Dark mode toggle functionality
+        const themeSwitcher = document.getElementById('theme-switcher');
+        const body = document.body;
+
+        // Check local storage for theme preference
+        if (localStorage.getItem('theme') === 'dark') {
+            body.classList.add('dark-mode');
+            themeSwitcher.checked = true;
+        }
+
+        // Toggle dark mode on checkbox click
+        themeSwitcher.addEventListener('change', function () {
+            if (this.checked) {
+                body.classList.add('dark-mode');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                body.classList.remove('dark-mode');
+                localStorage.setItem('theme', 'light');
+            }
+        });
+    </script>
 
 </body>
 </html>
