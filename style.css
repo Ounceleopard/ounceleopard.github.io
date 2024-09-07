@@ -1,4 +1,4 @@
-/* General reset and layout */
+/* General reset */
 * {
     margin: 0;
     padding: 0;
@@ -6,94 +6,150 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    background-color: #f4f4f4;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
     color: #333;
-    animation: backgroundFade 3s ease-in-out forwards;
+    background-color: #fff;
+    animation: backgroundFade 2s ease-in-out forwards;
+    line-height: 1.6;
 }
 
-/* Header styles */
+/* Clean Header Styles */
 header {
-    background-color: #333;
-    color: #fff;
+    background-color: #fff;
     padding: 20px 0;
-    text-align: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 10;
 }
 
 header h1 {
-    margin-bottom: 10px;
-    animation: fadeIn 2s ease-in-out;
+    font-size: 24px;
+    color: #333;
+    text-align: center;
+    margin-bottom: 0;
+    font-weight: 400;
 }
 
 nav ul {
     list-style: none;
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 30px;
+    margin-top: 10px;
 }
 
 nav ul li a {
-    color: #fff;
+    color: #333;
     text-decoration: none;
     font-size: 18px;
-    padding: 10px;
+    padding: 5px;
     position: relative;
+    transition: color 0.3s ease, transform 0.3s ease;
 }
 
 nav ul li a.active,
 nav ul li a:hover {
-    background-color: #555;
-    transition: background-color 0.3s ease;
-    transform: scale(1.1);
+    color: #555;
+    transform: scale(1.05);
 }
 
-/* Section styles */
-section {
-    padding: 60px 20px;
-    max-width: 1200px;
+/* Main Section */
+main {
+    max-width: 1000px;
     margin: 0 auto;
+    padding: 20px;
+}
+
+/* Home Section */
+#home {
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-align: center;
 }
 
-section h2 {
-    margin-bottom: 20px;
+#home h2 {
     font-size: 36px;
-    animation: fadeIn 2s ease-in-out;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+#home p {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+#home img {
+    width: 100%;
+    max-width: 500px;
+    margin-top: 20px;
+    border-radius: 10px;
+    opacity: 0;
+    animation: fadeIn 2s ease-in-out forwards;
+}
+
+/* Project Section */
+#projects {
+    padding: 60px 0;
+    text-align: center;
+}
+
+#projects h2 {
+    font-size: 32px;
+    margin-bottom: 40px;
+    color: #333;
 }
 
 .project-gallery {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     gap: 20px;
 }
 
 .project-item {
-    width: 30%;
-    animation: slideUp 2s ease-in-out;
+    flex: 1;
+    padding: 10px;
 }
 
 .project-item img {
     width: 100%;
-    height: auto;
-    border-radius: 8px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
 }
 
 .project-item:hover img {
     transform: scale(1.05);
-    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
 }
 
-/* Footer styles */
-footer {
+.project-item p {
+    margin-top: 10px;
+    font-size: 16px;
+    color: #555;
+}
+
+/* About and Contact Section */
+section#about, section#contact {
+    padding: 40px 0;
     text-align: center;
-    background-color: #333;
-    color: #fff;
-    padding: 10px 0;
-    position: relative;
-    bottom: 0;
-    width: 100%;
+}
+
+section#about p, section#contact p {
+    color: #666;
+    font-size: 18px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Footer */
+footer {
+    padding: 20px 0;
+    text-align: center;
+    background-color: #fff;
+    color: #aaa;
+    border-top: 1px solid #eee;
 }
 
 /* Animations */
@@ -106,28 +162,27 @@ footer {
     }
 }
 
-@keyframes slideUp {
+@keyframes backgroundFade {
     from {
-        transform: translateY(20px);
-        opacity: 0;
+        background-color: #f0f0f0;
     }
     to {
-        transform: translateY(0);
-        opacity: 1;
+        background-color: #fff;
     }
 }
 
-@keyframes backgroundFade {
-    0% {
-        background-color: #000;
+/* Responsive Design */
+@media (max-width: 768px) {
+    .project-gallery {
+        flex-direction: column;
+        gap: 20px;
     }
-    100% {
-        background-color: #f4f4f4;
-    }
-}
 
-/* Classes to trigger specific animations */
-.fade-in {
-    opacity: 0;
-    animation: fadeIn 2s ease-in-out forwards;
+    nav ul {
+        gap: 15px;
+    }
+
+    header h1 {
+        font-size: 20px;
+    }
 }
