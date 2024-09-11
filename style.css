@@ -54,7 +54,7 @@ header h1 {
     color: var(--text-color);
     text-align: center;
     margin: 0 auto;
-    padding-right: 50px; /* Adjusted to move the title a bit to the right */
+    padding-left: 20px; /* Adjusted padding to slightly shift title back to the left */
     font-weight: 400;
 }
 
