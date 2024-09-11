@@ -53,8 +53,7 @@ header h1 {
     font-size: 24px;
     color: var(--text-color);
     text-align: center;
-    margin: 0 auto;
-    padding-right: 50px; /* Adjusted to move the title a bit to the right */
+    margin-bottom: 0;
     font-weight: 400;
 }
 
@@ -222,4 +221,38 @@ section#about p, section#contact p {
     margin: 0 auto;
 }
 
+/* Footer */
+footer {
+    padding: 20px 0;
+    text-align: center;
+    background-color: var(--header-background);
+    color: var(--secondary-text-color);
+    border-top: 1px solid var(--border-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
 
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .project-gallery {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    nav ul {
+        gap: 15px;
+    }
+
+    header h1 {
+        font-size: 20px;
+    }
+}
