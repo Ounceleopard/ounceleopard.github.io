@@ -36,7 +36,7 @@ body {
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Header styles */
+/* Clean Header Styles */
 header {
     background-color: var(--header-background);
     padding: 20px 0;
@@ -50,26 +50,20 @@ header {
 }
 
 header h1 {
-    font-size: 20px;
+    font-size: 24px;
     color: var(--text-color);
-    margin-left: 30px; /* Name shifted to the left */
+    text-align: center;
+    margin: 0 auto;
+    padding-right: 50px; /* Adjusted to move the title a bit to the right */
     font-weight: 400;
-}
-
-.header-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
 }
 
 nav ul {
     list-style: none;
     display: flex;
-    justify-content: center; /* Center the nav links */
+    justify-content: center;
     gap: 30px;
     margin-top: 10px;
-    margin-right: 50px; /* Adjust spacing for better alignment */
 }
 
 nav ul li a {
@@ -77,6 +71,7 @@ nav ul li a {
     text-decoration: none;
     font-size: 18px;
     padding: 5px;
+    position: relative;
     transition: color 0.3s ease, transform 0.3s ease;
 }
 
@@ -227,38 +222,4 @@ section#about p, section#contact p {
     margin: 0 auto;
 }
 
-/* Footer */
-footer {
-    padding: 20px 0;
-    text-align: center;
-    background-color: var(--header-background);
-    color: var(--secondary-text-color);
-    border-top: 1px solid var(--border-color);
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
 
-/* Animations */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .project-gallery {
-        flex-direction: column;
-        gap: 20px;
-    }
-
-    nav ul {
-        gap: 15px;
-    }
-
-    header h1 {
-        font-size: 20px;
-    }
-}
